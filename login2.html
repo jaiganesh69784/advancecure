@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+
+<body>
+<div class="title">
+    <p>Advance Cure <sup style="color: red;">+</sup></p>
+</div>
+<div class="container">
+    <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form>
+            <div class="row">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="User Name" required>
+            </div>
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="row button">
+                <button type="button" id="login-button">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+<script>
+    const sampleData = [
+        { phone: "1234567890", otp: "123456" },
+        { phone: "9876543210", otp: "654321" },
+        { phone: "5555555555", otp: "111111" },
+        { phone: "7777777777", otp: "777777" },
+        { phone: "9999999999", otp: "999999" }
+    ];
+
+    function login() {
+        const phoneInput = document.getElementById("phone");
+        const otpInput = document.getElementById("otp");
+        const errorMessage = document.getElementById("error-message");
+
+        const phoneNumber = phoneInput.value;
+        const enteredOtp = otpInput.value;
+
+        const matchedUser = sampleData.find(user => user.phone === phoneNumber && user.otp === enteredOtp);
+
+        if (matchedUser) {
+            // Redirect to hos.html on success (you can keep this line if you want)
+            window.location.href = "hos.html";
+            // Clear the error message
+            errorMessage.textContent = "";
+        } else {
+            // Display an error message
+            errorMessage.textContent = "Invalid phone number or OTP. Please try again.";
+        }
+    }
+
+    const loginButton = document.getElementById("login-button");
+    loginButton.addEventListener("click", login);
+</script>
+</body>
+</html>

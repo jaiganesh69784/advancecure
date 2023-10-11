@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">home</a></li>
+            </ul>
+            <img src="virat kohli kinguu.jpg" class="user-pic" onclick="togglemenu()">
+
+            <div class="sub-menu-wrap" id="submenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="virat kohli kinguu.jpg" alt="">
+                        <h3>James Aldrino</h3>
+                    </div>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="profile.png">
+                        <p>Edit profile</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="setting.png">
+                        <p>setting & privacy</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="help.png">
+                        <p>Help & Support</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="logout.png">
+                        <p>logout</p>
+                        <span>></span>
+                    </a>
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <script>
+        let submenu = document.getElementById("submenu");
+
+        function togglemenu(){
+            submenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>

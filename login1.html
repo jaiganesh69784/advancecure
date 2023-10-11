@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  
+  <body class="body">
+    <div class="title">
+      <p>Advance Cure <sup style="color: red;">+</sup></p>
+    </div>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        
+        <form onsubmit="return checkCredentials();" action="index.html" target="_blank">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" placeholder="User Name" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+          </div>
+          <div class="row button">
+            <input type="submit" value="Login">
+          </div>
+        </form>
+        
+      </div>
+    </div>
+
+    <script>
+      function checkCredentials() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Define sample usernames and passwords
+        var sampleUsers = ["john_doe", "alice_smith", "mike_jackson", "sarah_brown", "sam_wilson"];
+        var samplePasswords = ["secure123", "passw0rd", "letmein", "secret", "access99"];
+
+        // Check if the entered credentials match any of the sample credentials
+        for (var i = 0; i < sampleUsers.length; i++) {
+          if (username === sampleUsers[i] && password === samplePasswords[i]) {
+            return true; // Allow the form to submit
+          }
+        }
+
+        // If the credentials do not match, show an alert and prevent form submission
+        alert("Invalid username or password.");
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
+</html>
